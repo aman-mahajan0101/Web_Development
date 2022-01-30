@@ -1,0 +1,38 @@
+div {
+  height: 100px;
+  width: 100px;
+  background-color: indigo;
+  color: beige;
+  margin: 30px;
+  padding: 10px;
+}
+/*Scale trasnformation  */
+.one {
+  transform: scale(1.5, 1.5);
+  /* transform: scaleX(4); */
+  /* transform: scaleY(4); */
+}
+/*Rotate Transformation  */
+.two {
+  /* transform: Rotate(30deg); */
+  transform: RotateZ(30deg);
+  /* transform: rotateX(67deg); */
+  /* transform: rotateY(457deg); */
+}
+/*Translate Trasformation  */
+.three {
+  /* transform: translate(70px, 50px); */
+  transform: translateX(70px);
+  /* transform: translateY(-15px); */
+}
+/*Mixed Transformation  */
+.four {
+  transform: rotate(47deg) translate(55px) rotate(30deg) scale(1.5, 1.5);
+}
+/*Skew Transformation  */
+.five {
+  /* transform: skew(40deg, 60deg); */
+  /* transform: skewX(40deg); */
+  /* transform: skewY(40deg); */
+  transform: skewY(20deg) skewX(30deg) skewY(-20deg) skewX(-30deg);
+}

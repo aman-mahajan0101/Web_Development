@@ -1,0 +1,45 @@
+body {
+  background-color: lightblue;
+}
+section {
+  background-color: beige;
+  margin-left: 38vw;
+  width: 400px;
+  height: 800px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+nav {
+  width: auto;
+  height: 30px;
+  text-align: left;
+  background-color: beige;
+  position: sticky;
+  top: 0px;
+  font: 22px bold;
+  padding: 5px;
+  color: black;
+}
+/* nav {
+  padding: 5px;
+  position: sticky;
+  top: 2px;
+  z-index: 3;
+  height: 30px;
+} */
+div {
+  margin-left: 40%;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 15px 20px;
+  height: 30px;
+  text-align: center;
+  margin-top: 5px;
+  background-color: lightblue;
+  color: black;
+}
+h1 {
+  color: coral;
+  text-align: center;
+}

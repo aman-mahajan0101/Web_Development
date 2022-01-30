@@ -1,0 +1,29 @@
+* {
+  color: red;
+}
+div {
+  color: #000;
+}
+p {
+  color: coral;
+}
+.bold {
+  font-weight: bold;
+}
+.big {
+  font-size: 50px;
+}
+#one {
+  font-family: Arial, Helvetica;
+  background-color: orange;
+}
+#two {
+  font-family: sans-serif;
+  background-color: aquamarine;
+}
+input[disabled] {
+  height: 30px;
+}
+input[type="text"] {
+  font-size: 30pt;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+    <legend>Personal Information</legend>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <br>
+        Age
+        <input type="radio" name="age" id="18"> <label for="18">< 18</label> 
+        <input type="radio" name="age" id="25"> <label for="25">18-25</label> 
+        <input type="radio" name="age" id="40"> <label for="40">26-40</label> 
+        <input type="radio" name="age" id="65"> <label for="65">41-65</label> 
+        <input type="radio" name="age" id="65+"><label for="65+">65+</label>  
+        <fieldset>
+        <legend>Academic Information</legend>
+        Goals: Check all that apply
+        <input type="checkbox" name="DegAD" id="AD"><label for="AD">Associate Degree</label>
+        <input type="checkbox" name="DegCSU" id="CSU"><label for="CSU">Transfer to CSU</label>
+        <input type="checkbox" name="DegUC" id="UC"><label for="UC">Transfer to UC</label>
+        <br>
+        <input type="checkbox" name="DegPE" id="PE"><label for="PE">Personal Enrichment</label>
+       
+        <br>
+        <br>
+    </fieldset>
+        Field of Study: Select all that apply, hold CTRL when clicking to select multiple items
+        <select multiple>
+            <option value="Accounting">Accounting</option>
+            <option value="Astronomy">Astronomy</option>
+            <option value="Accounting">Buisness</option>
+        </select>
+        <br>
+        <br>
+        Comments:
+        <textarea name="comments"  cols="30" rows="5"></textarea>
+        <br>
+        <button type="submit">Send Data</button>
+        <button type="reset">Reset Form</button>
+    </form>
+</fieldset>
+</body>
+</html>

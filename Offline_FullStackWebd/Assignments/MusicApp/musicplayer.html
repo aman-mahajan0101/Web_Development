@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <script
+      src="https://kit.fontawesome.com/0c6dbfc44f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="playlist">
+            <span class="mp">Music Player</span>
+           <div class="songs-list">
+            
+           </div>
+        </div>
+        <div class="leftcolumn">
+            <div class="image">
+                <div class='icon'>
+                </div>
+            </div>
+            <div class="name">
+                <span></span>
+            </div>
+            <div class="play-section">
+               <div class="vol">
+                <button class="btn voldown"><i class="fas fa-volume-down"></i></button>
+                <input class="volslider" type="range"></input>
+                <button class="btn volup"><i class="fas fa-volume-up"></i></button>
+               </div>
+               <div class="control">
+                <button class="btn prevsong"><i class="fas fa-step-backward"></i></button>
+                <button class="btn playpause"><i class="fas fa-play-circle"></i></button>
+                <button class="btn nextsong"><i class="fas fa-step-forward"></i></button>
+               </div>
+               <div class="time">
+                <span class="current-time">00:00</span>
+                <input class="timeslider" type="range" min='1' max='100' value='0' onchange="seekTo()"></input>
+                <span class="total-duration">00:00</span>
+               </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

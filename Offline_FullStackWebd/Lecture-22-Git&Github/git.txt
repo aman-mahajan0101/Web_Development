@@ -1,0 +1,29 @@
+
+<--- For initailising git and making it a repositary--->
+git init
+
+<---For adding the files into the staging area--->
+git add filename
+git add .
+git add -A
+
+<---for creating the version of the project we use this --->
+git commit -m "Message you want to display"
+
+<---check the status of staging area --->
+git status
+
+<---for checking the dfferent commit or the versions --->
+git log
+
+<---for getting the list of branches--->
+git branch
+
+<---for creating new branch--->
+git branch branch_name
+
+<---for merging 2 branches --->
+git merge branch_name   <---call this command in which you want the branch to be merge ie from the parent branch --->
+
+<--for going to different branch or previous version --->
+git checkout branch_name  or git checkout commit_id    <---you can get commit id from git log --->
