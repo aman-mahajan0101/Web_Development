@@ -23,6 +23,8 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     .then((m) => console.log(m))
 //     .catch((err) => console.log(err));
 
+//.save() is not used with the insertMany() as it is a static fucntion not a model class Movie
+
 const DUMMY_MOVIES = [
   {
     name: "Fast and Furious",
