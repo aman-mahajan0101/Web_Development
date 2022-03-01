@@ -10,11 +10,13 @@ route.get("/", async (req, res) => {
 
 route.post("/", async (req, res) => {
   const { userId, title, body } = req.body;
+
   if (!userId || !title || !body) {
     return res.status(400).send({
       error: "Need userid,title and body to create the post",
     });
   }
+
   const post = await createNewPost(userId, title, body);
   res.status(201).send(post);
 });
