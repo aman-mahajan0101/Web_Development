@@ -38,4 +38,36 @@ src
     └── username.js
 ```
 
-## Business Layer
+## Business Logic
+
+### Users
+
+1. **create users**
+   This will create a new user with a randon username
+
+### Posts
+
+1. **create post**
+   This will create a new post, required fields are
+
+   - userame
+   - title
+   - body
+
+2. **show all posts**
+   List all existing posts, we shoudl have following filtering support
+
+   - filter by username
+   - filter by query contained in title(search by title)
+
+3. **Edit post** `TBD`
+
+4. **delete post** `TBD`
+
+### Comments
+
+1. **Show all comments (of a user)**
+
+2. **Show all comments (under a user)**
+
+3. **Add a comments (of a user)**
