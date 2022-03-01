@@ -1,3 +1,0 @@
-All posts are shown from all users
-Write post frontend is created post request is not done
-To create a post we need to visit /api/posts and create post using POSTMAN
