@@ -65,7 +65,7 @@ src
 │   │   └── index.js
 │   └── users
 │       └── index.js
-└── utils
+└── utils                   # Creating random usernames for our app
     └── username.js
 ```
 
