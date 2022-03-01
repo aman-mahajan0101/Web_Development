@@ -21,6 +21,8 @@ module.exports = {
   showAllPosts,
 };
 
+//Test code
+
 // async function task() {
 //   console.log(
 //     await createNewPost(
@@ -38,7 +40,9 @@ module.exports = {
 //     );
 //   const posts = await showAllPosts();
 //   for (let p of posts) {
-//     console.log(`${p.title}\n${p.body}\n===========\n`);
+//     console.log(
+//       `${p.title}\nauthor:${p.user.username}\n${p.body}\n===========\n`
+//     );
 //   }
 // }
 

@@ -42,19 +42,19 @@ src
 
 ### Users
 
-1. **create users**
+1. **create users :**
    This will create a new user with a randon username
 
 ### Posts
 
-1. **create post**
+1. **create post :**
    This will create a new post, required fields are
 
    - userame
    - title
    - body
 
-2. **show all posts**
+2. **show all posts :**
    List all existing posts, we shoudl have following filtering support
 
    - filter by username
