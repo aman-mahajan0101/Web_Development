@@ -1,9 +1,7 @@
-const { executionAsyncResource } = require("async_hooks");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const { parse } = require("url");
 const Product = require("./models/product");
 const seedProducts = require("./seed");
 
@@ -26,8 +24,50 @@ app.get("/products", async (req, res) => {
   res.render("index", { products });
 });
 
-app.get("/add_products", async (req, res) => {
-  res.render("add_products");
+app.get("/products/new", (req, res) => {
+  res.render("new");
+});
+
+app.post("/products", async (req, res) => {
+  const { name, price } = req.body;
+
+  await Product.create({ name, price });
+
+  res.redirect("/products");
+});
+
+app.get("/products/:productid", async (req, res) => {
+  const { productid } = req.params;
+
+  const product = await Product.findById(productid);
+
+  res.render("show", { product });
+});
+
+app.get("/products/:productid/edit", async (req, res) => {
+  const { productid } = req.params;
+
+  const product = await Product.findById(productid);
+
+  res.render("edit", { product });
+});
+
+app.patch("/products/:productid", async (req, res) => {
+  const { productid } = req.params;
+
+  const { name, price } = req.body;
+
+  await Product.findByIdAndUpdate(productid, { name, price });
+
+  res.redirect("/products");
+});
+
+app.delete("/products/:productid", async (req, res) => {
+  const { productid } = req.params;
+
+  await Product.findByIdAndDelete(productid);
+
+  res.redirect("/products");
 });
 
 app.listen(3000, () => {
