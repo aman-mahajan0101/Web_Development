@@ -4,12 +4,14 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Product = require("./models/product");
 const seedProducts = require("./seed");
+const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 mongoose
   .connect("mongodb://localhost/shop-app")
