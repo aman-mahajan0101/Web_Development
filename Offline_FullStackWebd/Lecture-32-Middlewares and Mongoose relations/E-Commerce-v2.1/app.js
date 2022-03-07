@@ -19,18 +19,11 @@ app.use(methodOverride('_method'));
 
 const productRoutes = require('./routes/productRoutes');
 
-
-
 app.get('/', (req, res) => {
     res.send("Home Page")
 });
 
-
-
 app.use(productRoutes);
-
-
-
 
 app.listen(3000,()=>{
   console.log('server started at port 3000');

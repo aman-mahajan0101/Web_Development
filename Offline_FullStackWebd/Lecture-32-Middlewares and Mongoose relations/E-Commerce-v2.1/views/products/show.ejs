@@ -56,12 +56,12 @@
                         </p>
                         <p><%=review.comment%></p>
                         <p class="text-muted"><%=review.createdAt.toDateString()%> </p>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </div>
-                  
+                        <form action="/products/<%=product._id%>/<%=review._id%>?_method=DELETE" method="post" class="d-inline-block">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>                  
                   </div>
             <% } %>  
         </div>
-       
     </div>
 </div>

@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const Review = require('../models/review');
-
-
+const mongoose = require("mongoose")
 
 router.get('/products', async (req, res) => {
     
@@ -59,6 +58,15 @@ router.delete('/products/:id', async (req, res) => {
     await Product.findByIdAndDelete(id);
 
     res.redirect('/products');
+});
+
+router.delete('/products/:productid/:reviewid', async (req, res) => {
+    
+    const { productid,reviewid } = req.params;
+
+    await Review.findByIdAndDelete(reviewid);
+
+    res.redirect(`/products/${productid}`);
 });
 
 router.post('/products/:productid/review', async(req, res) => {
