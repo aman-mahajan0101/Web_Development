@@ -117,6 +117,9 @@ const deleteReview = async (req, res) => {
 
     await Product.findByIdAndUpdate(productid, { $pull: { reviews: reviewid } });
 
+    // //avgRating chng
+    // const newRating = (product.avgRating * product.reviews.length/ product.reviews.length);
+
     res.redirect(`/products/${productid}`);
   } catch (e) {
     req.flash("error", e.message);
