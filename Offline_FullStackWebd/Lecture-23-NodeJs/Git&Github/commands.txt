@@ -8,4 +8,4 @@ git push origin marger
 Jab aae toh jo file mei aa rha h usmei khdh manually jao ar check kro kyu aa rha aur chnges ko dekhlokaunse rakhne h kaunse nhi aur usko dubra add add commit krke daldo 
 
 <<--Github-->>
-Pull request ke liye ya toh code ko apne github account mei FORK se lelo ya fir clone krke push krdo apne git account mei fir usse pull request wali jagah jakr pull ki request daldo
+Pull request  ke liye ya toh code ko apne github account mei FORK se lelo ya fir clone krke push krdo apne git account mei fir usse pull request wali jagah jakr pull ki request daldo
