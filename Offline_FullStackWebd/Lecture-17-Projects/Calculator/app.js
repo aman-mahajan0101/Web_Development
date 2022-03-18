@@ -9,7 +9,7 @@ table.addEventListener("click", function (e) {
   } else if (e.target.innerText === "C") {
     input.value = "";
   } else if (e.target.innerText === "=") {
-    count++;
+    count = count + 1;
     try {
       input.value = eval(input.value);
     } catch (error) {
