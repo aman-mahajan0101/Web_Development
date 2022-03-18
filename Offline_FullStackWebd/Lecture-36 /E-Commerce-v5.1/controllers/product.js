@@ -113,12 +113,17 @@ const createReview = async (req, res) => {
 const deleteReview = async (req, res) => {
   try {
     const { productid, reviewid } = req.params;
+
+    const product = await Product.findById(productid);
+    const review = await Product.findById(reviewid);
+
     await Review.findByIdAndDelete(reviewid);
 
     await Product.findByIdAndUpdate(productid, { $pull: { reviews: reviewid } });
 
-    // //avgRating chng
-    // const newRating = (product.avgRating * product.reviews.length/ product.reviews.length);
+    const newAverageRating = (product.avgRating * product.reviews.length) / (product.reviews.length + 1);
+    product.avgRating = parseFloat(newAverageRating.toFixed(1));
+    product.save();
 
     res.redirect(`/products/${productid}`);
   } catch (e) {
