@@ -4,7 +4,7 @@ const path = require("path");
 const data = "Writing file using Node.js";
 
 // console.log(process.cwd());
-// console.log(__dirname);
+// console.log(__dirname); //Gives the name of the working directory
 
 //This is to create a file in a same folder ie FileSystem
 fs.writeFile("abc.txt", data, (err) => {
