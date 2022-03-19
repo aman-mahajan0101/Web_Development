@@ -39,12 +39,9 @@ router.delete("/user/:productid/cart", isLoggedIn, async (req, res) => {
   try {
     const { productid } = req.params;
     const userid = req.user._id;
-    // console.log(userid);
-    console.log(productid);
 
     const user = await User.findById(userid);
-    console.log(user);
-    await user.findByIdAndUpdate(user._id, { $pull: { cart: productid } });
+    await User.findByIdAndUpdate(user._id, { $pull: { cart: { item: productid } } });
 
     res.redirect(`/user/cart`);
   } catch (e) {
