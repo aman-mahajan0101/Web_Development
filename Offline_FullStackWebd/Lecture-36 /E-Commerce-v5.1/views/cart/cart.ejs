@@ -45,7 +45,8 @@
       <ul class="list-group">
         <% for(let product of user.cart) {%>
         <li class="list-group-item">
-          <span class="fw-bold"><%=product.item.name%> - </span>&#8377; <%=product.item.price%> x <span><%=product.qty%></span>
+          <span class="fw-bold"><%=product.item.name%> - </span>&#8377; <%=product.item.price%> x
+          <span class="amt-quantity" price="<%=product.item.price%>"><%=product.qty%></span>
         </li>
         <% } %>
         <li class="list-group-item fw-bold">Total Amount : &#8377; <%=totalAmount%></li>
