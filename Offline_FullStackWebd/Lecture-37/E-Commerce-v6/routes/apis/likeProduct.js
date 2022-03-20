@@ -6,8 +6,12 @@ const User = require("../../models/user");
 router.post("/user/:productid/like", isLoggedIn, async (req, res) => {
   const { productid } = req.params;
 
+  console.log(productid);
+
   const user = req.user;
   const isLiked = user.wishList.includes(productid);
+
+  console.log(isLiked);
 
   if (isLiked) {
     req.user = await User.findByIdAndUpdate(req.user._id, { $pull: { wishList: productid } });
