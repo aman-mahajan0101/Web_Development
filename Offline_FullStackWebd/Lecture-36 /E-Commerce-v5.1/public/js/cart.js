@@ -1,7 +1,7 @@
 // const cartContainer = document.querySelector(".quantity-container");
 // const cartContainer = document.querySelector(".container");
 // const cartContainer = document.querySelector(".col-8");
-const cartContainer = document.querySelector(".card-body");
+const cartContainer = document.querySelector(".cart");
 const quantity = document.querySelector(".quantity");
 const amtquantity = document.querySelector(".amt-quantity");
 const totalamt = document.querySelector(".list-group-item");
@@ -11,12 +11,18 @@ const totalamt = document.querySelector(".list-group-item");
 // console.log(amtquantity);
 console.log(totalamt);
 
+// cartContainer.addEventListener("click", (e) => {
+//   console.log(e.target);
+// });
+
 cartContainer.addEventListener("click", async (e) => {
   const tar = e.target;
 
   if (tar.classList.contains("fa-minus")) {
     console.log("minus clicked");
     const id = e.target.getAttribute("product-id");
+
+    console.log(id);
 
     //For changing the input of inc and dec span
     let val = quantity.innerText;
