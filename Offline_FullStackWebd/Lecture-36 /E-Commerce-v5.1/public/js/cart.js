@@ -8,18 +8,16 @@ const totalamt = document.querySelector(".list-group-item");
 cartContainer.addEventListener("click", async (e) => {
   const tar = e.target;
 
-  console.log(tar);
-
   if (tar.classList.contains("fa-minus")) {
-    console.log("minus clicked");
     const id = e.target.getAttribute("product-id");
 
-    //For changing the input of inc and dec span
-    tar.parentElement.nextElementSibling.innerText = Number(tar.parentElement.nextElementSibling.innerText) - 1;
-
-    const res = await axios.post(`/user/${id}/dec/cart`);
+    if (Number(tar.parentElement.nextElementSibling.innerText) === 1) {
+      const res = await axios.delete(`/user/${id}/cart`);
+    } else {
+      tar.parentElement.nextElementSibling.innerText = Number(tar.parentElement.nextElementSibling.innerText) - 1;
+      const res = await axios.post(`/user/${id}/dec/cart`);
+    }
   } else if (tar.classList.contains("fa-plus")) {
-    console.log("plus clicked");
     const id = e.target.getAttribute("product-id");
 
     //For changing the input of inc and dec span

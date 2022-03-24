@@ -76,7 +76,7 @@ const authRoutes = require("./routes/authRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 
 //APIs
-const incDecApi = require("./routes/apis/incDec");
+const cartAPI = require("./routes/apis/cartAPI");
 
 app.get("/", (req, res) => {
   res.send("Home Page");
@@ -86,7 +86,7 @@ app.get("/", (req, res) => {
 app.use("/products", productRoutes);
 app.use(authRoutes);
 app.use(cartRoutes);
-app.use(incDecApi);
+app.use(cartAPI);
 
 app.get("/error", (req, res) => {
   res.render("error");
