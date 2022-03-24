@@ -77,6 +77,7 @@ const cartRoutes = require("./routes/cartRoutes");
 
 //APIs
 const cartAPI = require("./routes/apis/cartAPI");
+const likeProductApi = require("./routes/apis/likeFunctionality");
 
 app.get("/", (req, res) => {
   res.send("Home Page");
@@ -87,6 +88,7 @@ app.use("/products", productRoutes);
 app.use(authRoutes);
 app.use(cartRoutes);
 app.use(cartAPI);
+app.use(likeProductApi);
 
 app.get("/error", (req, res) => {
   res.render("error");
