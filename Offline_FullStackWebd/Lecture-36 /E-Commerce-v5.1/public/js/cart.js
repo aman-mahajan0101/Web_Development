@@ -12,6 +12,7 @@ cartContainer.addEventListener("click", async (e) => {
     const id = e.target.getAttribute("product-id");
 
     if (Number(tar.parentElement.nextElementSibling.innerText) === 1) {
+      tar.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
       const res = await axios.delete(`/user/${id}/cart`);
     } else {
       tar.parentElement.nextElementSibling.innerText = Number(tar.parentElement.nextElementSibling.innerText) - 1;

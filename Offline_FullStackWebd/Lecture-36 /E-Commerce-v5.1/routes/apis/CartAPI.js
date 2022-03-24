@@ -9,16 +9,16 @@ router.post("/user/:productid/dec/cart", async (req, res) => {
   const user = await User.findById(userid);
 
   //Code for 0 items to be order it should delete that item but it is not happening
-  // if (user.cart.qty === 1) {
-  //   await axios.delete("/user/:productid/cart");
-  // } else {
-  const newCartArray = user.cart.map((product) => {
-    return product.item.equals(productid) ? { item: product.item, qty: product.qty - 1 } : product;
-  });
-  user.cart.splice(0, user.cart.length);
-  user.cart.push(...newCartArray);
-  await user.save();
-  // }
+  if (user.cart.qty === 1) {
+    await axios.delete("/user/:productid/cart");
+  } else {
+    const newCartArray = user.cart.map((product) => {
+      return product.item.equals(productid) ? { item: product.item, qty: product.qty - 1 } : product;
+    });
+    user.cart.splice(0, user.cart.length);
+    user.cart.push(...newCartArray);
+    await user.save();
+  }
 
   res.redirect("/user/cart");
 });
