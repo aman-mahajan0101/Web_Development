@@ -1,9 +1,6 @@
 const cartContainer = document.querySelector(".cart");
 const quantity = document.querySelector(".quantity");
 const amtquantity = document.querySelector(".amt-quantity");
-const totalamt = document.querySelector(".list-group-item");
-
-// console.log(totalamt);
 
 cartContainer.addEventListener("click", async (e) => {
   const tar = e.target;
@@ -56,4 +53,9 @@ cartContainer.addEventListener("click", async (e) => {
 
 
     <button class="text-danger" type="submit"><i class="fas fa-trash fa-lg"></i></button>
+const a = document.querySelector(".list-group")
+    a.lastElementChild.innerText=
+
+    or(int i=0;i<children.length;i++){if(children[0].children[0].iinnerText==="Iphone 11 -"){a.lastElementChild.innerText="hi"}}
+    var children = [].slice.call(a.children);
 */
