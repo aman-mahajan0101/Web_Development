@@ -13,6 +13,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
+const MongoStore = require("connect-mongo");
 
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/shopping-app";
 
@@ -31,7 +32,15 @@ app.use(methodOverride("_method"));
 
 const secret = process.env.SECRET || "weneedabettersecret";
 
+//For storing session in Database
+const store = MongoStore.create({
+  secret: secret,
+  mongoUrl: dbUrl,
+  touchAfter: 24 * 3600,
+});
+
 const sessionConfig = {
+  store,
   secret,
   resave: false,
   saveUninitialized: true,
@@ -98,6 +107,8 @@ app.all("*", (req, res) => {
   res.render("error");
 });
 
-app.listen(3000, () => {
-  console.log("server started at port 3000");
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`server started at port ${port}`);
 });
