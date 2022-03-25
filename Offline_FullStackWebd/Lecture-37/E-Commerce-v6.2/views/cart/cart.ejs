@@ -16,13 +16,13 @@
               <p class="card-text"><%=product.item.desc%></p>
               <div class="col-md-3 col-lg-3 col-xl-2 d-flex align-items-center quantity-container">
                 <!--decrement button -->
-                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" class="fas fa-minus"></i></span>
+                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" product-name="<%=product.item.name%>" product-price="<%=product.item.price%>" class="fas fa-minus"></i></span>
 
                 <!-- For showing the quantity of product being bought -->
                 <span id="form1" class="form-control-sm quantity"><%=product.qty%></span>
 
                 <!--increment button -->
-                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" class="fas fa-plus"></i></span>
+                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" product-name="<%=product.item.name%>" product-price="<%=product.item.price%>" class="fas fa-plus"></i></span>
 
                 <!-- form for removing the product from the cart -->
                 <form action="/user/<%=product.item._id%>/cart?_method=DELETE" method="post" class="col-md-1 col-lg-1 col-xl-1 ml-auto text-end">
@@ -44,7 +44,7 @@
           <span class="amt-quantity" price="<%=product.item.price%>"><%=product.qty%></span>
         </li>
         <% } %>
-        <li class="list-group-item fw-bold">Total Amount : &#8377; <%=totalAmount%></li>
+        <li class="list-group-item fw-bold">Total Amount : &#8377; <span><%=totalAmount%></span></li>
       </ul>
     </div>
   </div>
