@@ -17,10 +17,13 @@
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "joi": "^17.6.0",
+    "jssha": "^3.2.0",
     "method-override": "^3.0.0",
     "mongoose": "^6.2.3",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0"
+    "passport-local-mongoose": "^6.1.0",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2"
   }
 }

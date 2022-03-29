@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { isLoggedIn } = require("../middleware");
 const User = require("../models/user");
+const Product = require("../models/product");
 
 router.get("/user/cart", isLoggedIn, async (req, res) => {
   const userid = req.user._id;
@@ -9,7 +10,12 @@ router.get("/user/cart", isLoggedIn, async (req, res) => {
 
   const totalAmount = user.cart.reduce((currentSum, product) => currentSum + product.item.price * product.qty, 0);
 
+  // const productInfo = user.cart.map((p) => p.desc);
+
+  // console.log(productInfo);
+
   res.render("cart/cart", { user, totalAmount });
+  // res.render("cart/cart", { user, totalAmount, productInfo });
 });
 
 router.post("/user/:productid/cart", isLoggedIn, async (req, res) => {
