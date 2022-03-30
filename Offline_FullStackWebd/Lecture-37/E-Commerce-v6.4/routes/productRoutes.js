@@ -12,6 +12,16 @@ router.route("/:id").get(product.showProduct).patch(isLoggedIn, validateProduct,
 
 router.get("/:id/edit", isLoggedIn, isProductAuthor, product.getEditForm);
 
+router.get("/search", isLoggedIn, async (req, res) => {
+  const { q } = req.query;
+  console.log(req.query);
+  //   try {
+  //     res.send("TMK");
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+});
+
 // Add a review to particular product
 router.post("/:productid/review", isLoggedIn, validateReview, product.createReview);
 
