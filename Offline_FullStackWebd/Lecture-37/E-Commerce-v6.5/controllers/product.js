@@ -132,6 +132,15 @@ const deleteReview = async (req, res) => {
   }
 };
 
+const searchProduct = async (req, res) => {
+  const { query } = req.query;
+  console.log(query);
+  console.log(req.query);
+  const products = await Product.find({ name: query });
+  console.log(products);
+  res.render("products/index", { products });
+};
+
 module.exports.product = {
   getAllProducts,
   createProductForm,
@@ -142,4 +151,5 @@ module.exports.product = {
   deleteProduct,
   createReview,
   deleteReview,
+  searchProduct,
 };
