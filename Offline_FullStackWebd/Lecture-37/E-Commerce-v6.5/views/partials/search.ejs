@@ -1,0 +1,31 @@
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <form action="" method="GET" class="form-main">
+        <label for="filter">Filter</label>
+        <select name="filter" id="filter">
+          <option value="Choose">Choose</option>
+          <option value="Price:Low to High">Price:Low to High</option>
+          <option value="Price:High to Low">Price:High to Low</option>
+        </select>
+      </form>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <form action="/product/search" method="GET" class="form-main">
+        <div class="col-md-10 col-sm-10 col-xs-12 ms-auto">
+          <label class="sr-only" for="search">Search</label>
+          <span class="input-group">
+            <input type="text" class="form-control input-search" name="q" id="search" placeholder="Search" />
+            <span class="input-group-addon group-icon">
+              <button class="btn btn-m ms-auto" id="search-addon" type="submit" style="background-color: lightcoral">
+                <i class="fas fa-search"></i>
+              </button>
+            </span>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- <script src="search.js"></script> -->
