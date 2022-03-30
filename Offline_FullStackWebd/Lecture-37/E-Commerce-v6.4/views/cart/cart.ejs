@@ -1,6 +1,7 @@
 <% layout('layout/boilerplate') -%>
 
 <section class="container cart">
+  <% if(user.cart.length!== 0) {%>
   <h1 class="display-6">My Cart</h1>
   <div class="row">
     <div class="col-lg-8">
@@ -69,6 +70,11 @@
       </form>
     </div>
   </div>
+  <% }else { %>
+  <div class="row align-items-center">
+    <img src="https://shop.millenniumbooksource.com/static/images/cart1.png" alt="Empty cart" width="500px" height="700px" />
+  </div>
+  <%}%>
 </section>
 
 <script src="/js/cart.js"></script>
