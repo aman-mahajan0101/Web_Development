@@ -1,0 +1,88 @@
+<% layout('layout/boilerplate') -%>
+
+<section class="container cart">
+  <h1 class="display-6">My Cart</h1>
+  <div class="row">
+    <div class="col-lg-8">
+      <% for(let product of user.cart){%>
+      <div class="card mx-auto mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-4">
+            <img src="<%=product.item.img%>" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title"><%=product.item.name%></h5>
+              <p class="card-text"><%=product.item.desc%></p>
+              <div class="col-md-3 col-lg-3 col-xl-2 d-flex align-items-center quantity-container">
+                <!--decrement button -->
+                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" product-name="<%=product.item.name%>" product-price="<%=product.item.price%>" class="fas fa-minus"></i></span>
+
+                <!-- For showing the quantity of product being bought -->
+                <span id="form1" class="form-control-sm quantity"><%=product.qty%></span>
+
+                <!--increment button -->
+                <span class="btn btn-link px-2"><i product-id="<%=product.item._id%>" product-name="<%=product.item.name%>" product-price="<%=product.item.price%>" class="fas fa-plus"></i></span>
+
+                <!-- form for removing the product from the cart -->
+                <form action="/user/<%=product.item._id%>/cart?_method=DELETE" method="post" class="col-md-1 col-lg-1 col-xl-1 ml-auto text-end">
+                  <button class="text-danger" type="submit"><i class="fas fa-trash fa-lg"></i></button>
+                </form>
+              </div>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <%} %>
+    </div>
+    <div class="col-lg-4">
+      <ul class="list-group">
+        <% for(let product of user.cart) {%>
+        <li class="list-group-item">
+          <span class="fw-bold"><%=product.item.name%> - </span>&#8377; <%=product.item.price%> x
+          <span class="amt-quantity" price="<%=product.item.price%>"><%=product.qty%></span>
+        </li>
+        <% } %>
+        <li class="list-group-item fw-bold">Total Amount : &#8377; <span><%=totalAmount%></span></li>
+      </ul>
+      <!-- <form action="/payment_gateway/payumoney" method="POST">
+        <input type="hidden" name="amount" value="<%=totalAmount%>" />
+        <input type="hidden" name="phone" value="+919898989898" />
+        <input type="hidden" name="service_provider" value="payu_paisa" />
+        <input type="hidden" class="product" name="productinfo" value="fdf" />
+
+        <button type="submit" class="btn btn-sm btn-success my-3">Checkout</button>
+      </form> -->
+
+      <!-- <form action="https://test.payu.in/_payment" method="post">
+        <input type="hidden" name="key" value="gtKFFx" />
+        <input type="hidden" name="txnid" value="t6svtqtjRdl4qs" />
+        <input type="hidden" name="productinfo" value="iPhone" />
+        <input type="hidden" name="amount" value="<%=totalAmount%>" />
+        <input type="hidden" name="email" value="test@gmail.com" />
+        <input type="hidden" name="firstname" value="Ashish" />
+        <input type="hidden" name="surl" value="http://localhost:3000/payment/success" />
+        <input type="hidden" name="furl" value="http://localhost:3000/payment/fail" />
+        <input type="hidden" name="phone" value="9988776655" />
+        <input type="hidden" name="hash" value="8ae41f7783ba621848ed328f56848a39ac99d306f1c7037f623d1d5c556ac6b14ffbbc08c8e77afcb484d7f8ed421d6967995ac7dd34891d5fc6a4fd5e30168e" />
+        <button type="submit" class="btn btn-sm btn-success my-3">Checkout</button>
+      </form> -->
+      <form action="https://test.payu.in/_payment" method="post">
+        <input type="hidden" name="key" value="<%=key%>" />
+        <input type="hidden" name="txnid" value="<%=txnid%>" />
+        <input type="hidden" name="productinfo" value="iPhone" />
+        <input type="hidden" name="amount" value="<%=totalAmount%>" />
+        <input type="hidden" name="email" value="<%=email%>" />
+        <input type="hidden" name="firstname" value="<%=firstname%>" />
+        <input type="hidden" name="surl" value="<%=surl%>" />
+        <input type="hidden" name="furl" value="<%=furl%>" />
+        <input type="hidden" name="phone" value="9988776655" />
+        <input type="hidden" name="hash" value="<%=hash%>" />
+        <button type="submit" class="btn btn-sm btn-success my-3">Checkout</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="/js/cart.js"></script>
