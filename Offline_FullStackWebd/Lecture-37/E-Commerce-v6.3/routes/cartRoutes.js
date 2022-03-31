@@ -19,7 +19,7 @@ router.get("/user/cart", isLoggedIn, async (req, res) => {
   const email = user.email;
   const firstname = user.username;
   const productinfo = "iPhone";
-  const hashString = process.env.MERCHANT_KEY + "|" + txnid + "|" + totalAmount + "|" + productinfo + "|" + firstname + "|" + email + "|" + "||||||||||" + process.env.MERCHANT_SALT;
+  const hashString = process.env.MERCHANT_KEY + "|" + txnid + "|" + totalAmount + "|" + "iPhone" + "|" + firstname + "|" + email + "|" + "||||||||||" + process.env.MERCHANT_SALT;
   const sha = new jsSHA("SHA-512", "TEXT");
   sha.update(hashString);
   const hash = sha.getHash("HEX");
@@ -32,6 +32,8 @@ router.get("/user/cart", isLoggedIn, async (req, res) => {
   // const productInfo = user.cart.map((p) => p.desc);
 
   // console.log(productInfo);
+
+  console.log(key + txnid + email + firstname + surl + furl + hash);
 
   res.render("cart/cart", { user, totalAmount, key, txnid, email, firstname, surl, furl, hash });
   // res.render("cart/cart", { user, totalAmount, productInfo });

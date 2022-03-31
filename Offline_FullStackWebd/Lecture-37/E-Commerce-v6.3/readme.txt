@@ -1,0 +1,1 @@
+jb maine info change krke bhi dekhhhi jane wali jo h cart route mei bt vo still error de rha h jo hash generate hue vo alag hue maybe usska internal hashing funcion ab alag hoga toh islye error aa rhi hogi
