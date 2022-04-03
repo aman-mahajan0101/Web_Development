@@ -34,7 +34,7 @@ const TodoList = (props) => {
   };
 
   const todoList = todos.map((todo, idx) => {
-    return <Todo key={idx} Title={todo.title} Task={todo.task} />;
+    return <Todo key={idx} Title={todo.title} Task={todo.task} handleDelete={handleDelete} />;
   });
 
   return (
