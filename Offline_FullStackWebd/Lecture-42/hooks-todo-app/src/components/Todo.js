@@ -1,10 +1,14 @@
 import React from "react";
+import { FaTrashAlt } from "react-icons/fa";
 
-const Todo = ({ task, completed }) => {
+const Todo = ({ id, task, completed, deleteTodo, toggleCompleted }) => {
   return (
-    <li>
-      <input type="checkbox" defaultChecked={completed} />
+    <li style={{ textDecoration: completed ? "line-through" : "node" }}>
+      <input onChange={() => toggleCompleted(id)} type="checkbox" defaultChecked={completed} />
       <span>{task}</span>
+      <span onClick={() => deleteTodo(id)}>
+        <FaTrashAlt />
+      </span>
     </li>
   );
 };
