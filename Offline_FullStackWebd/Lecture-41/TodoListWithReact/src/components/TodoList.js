@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Todo from "./Todo";
 import Form from "./Form";
 
-const TodoList = () => {
+const TodoList = (props) => {
   const DUMMY_TODOS = [
     {
       title: "Shopping",
@@ -22,7 +22,14 @@ const TodoList = () => {
 
   const addTodo = (todo) => {
     return setTodos((prevState) => {
-      return [...todos, todo];
+      return [...prevState, todo];
+    });
+  };
+
+  const handleDelete = (title) => {
+    console.log(title);
+    return setTodos((prevState) => {
+      return prevState.filter((todo) => todo.title !== title);
     });
   };
 
@@ -33,6 +40,7 @@ const TodoList = () => {
   return (
     <div>
       <Form addTodo={addTodo} />
+      <Todo handleDelete={handleDelete} />
       {todoList}
     </div>
   );

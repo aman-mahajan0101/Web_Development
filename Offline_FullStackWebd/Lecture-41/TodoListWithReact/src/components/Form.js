@@ -12,7 +12,7 @@ const Form = (props) => {
     e.preventDefault();
     const title = titleInputRef.current.value;
     const task = taskInputRef.current.value;
-    props.addPerson({ title, task });
+    props.addTodo({ title, task });
     titleInputRef.current.value = "";
     taskInputRef.current.value = "";
     // resetName();
