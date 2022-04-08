@@ -2,9 +2,11 @@ const cartContainer = document.querySelector(".cart");
 const ul = document.querySelector(".list-group");
 var items = ul.getElementsByTagName("li");
 var total = ul.lastElementChild;
+const checkout = document.querySelector(".checkout-badge");
 
 cartContainer.addEventListener("click", async (e) => {
   const tar = e.target;
+  // console.log(checkout);
   const id = e.target.getAttribute("product-id");
   const name = e.target.getAttribute("product-name");
   const price = e.target.getAttribute("product-price");
@@ -12,6 +14,9 @@ cartContainer.addEventListener("click", async (e) => {
   if (tar.classList.contains("fa-minus")) {
     if (Number(tar.parentElement.nextElementSibling.innerText) === 1) {
       tar.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
+
+      var count = checkout.children[1].innerText;
+      checkout.children[1].innerHTML = `<span class="badge bg-danger">${count - 1}</span>`;
 
       for (var i = 0; i < items.length - 1; i++) {
         if (items[i].children[0].outerText.includes(name)) {
