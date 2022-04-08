@@ -14,6 +14,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const MongoStore = require("connect-mongo");
+const favicon = require("serve-favicon");
 
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/shopping-app";
 
@@ -102,6 +103,7 @@ app.use(cartAPI);
 app.use(payment);
 app.use(likeProductApi);
 app.use(filterProductsApi);
+app.use(favicon(__dirname + "/favicon.png"));
 
 app.get("/error", (req, res) => {
   res.render("error");
