@@ -103,7 +103,7 @@ app.use(cartAPI);
 app.use(payment);
 app.use(likeProductApi);
 app.use(filterProductsApi);
-app.use(favicon(path.join(__dirname + "/favicon.jpeg")));
+app.use(favicon(path.join(__dirname + "/favicon.png")));
 
 app.get("/error", (req, res) => {
   res.render("error");
