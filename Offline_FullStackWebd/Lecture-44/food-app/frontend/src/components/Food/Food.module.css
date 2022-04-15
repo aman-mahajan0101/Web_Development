@@ -1,0 +1,26 @@
+.foodItem {
+  margin-left: 3px;
+}
+.foodbox {
+  border-bottom: 1px solid black;
+  list-style: none;
+  margin-right: 5px;
+}
+.name {
+  font-weight: bolder;
+  color: rgba(78, 3, 228, 2);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  margin: 2px;
+}
+.desc {
+  font-weight: 600;
+  font-style: italic;
+  margin: 2px;
+}
+
+.price {
+  font-size: medium;
+  color: rgb(252, 54, 5);
+  margin-bottom: 15px;
+}

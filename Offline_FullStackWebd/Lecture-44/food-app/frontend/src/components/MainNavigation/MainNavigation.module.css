@@ -1,0 +1,24 @@
+.navbar {
+  background-color: brown;
+  font-size: larger;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 25px;
+}
+
+.head {
+  margin-left: 45vh;
+}
+
+.login {
+  display: flex;
+  margin: 100px;
+  margin-right: 40vh;
+}
+
+.item {
+  margin: 5px;
+}
